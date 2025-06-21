@@ -1,7 +1,9 @@
 services:
   nayeon-pokemon:
     image: "nayeon-pokemon"
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - type: bind
         source: .
