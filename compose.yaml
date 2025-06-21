@@ -7,7 +7,7 @@ services:
     volumes:
       - type: bind
         source: .
-        target: /app
+        target: .
     environment:
       - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
       - POKEMON_CHANNEL=${POKEMON_CHANNEL}
