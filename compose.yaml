@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - type: bind
-        source: .
+        source: ./app
         target: /app
     environment:
       - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
