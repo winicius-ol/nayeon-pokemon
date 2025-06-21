@@ -1,0 +1,12 @@
+services:
+  nayeon-pokemon:
+    image: "nayeon-pokemon"
+    build: .
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    environment:
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+      - POKEMON_CHANNEL=${POKEMON_CHANNEL}
+      - CRON_JOB_HOURS=${CRON_JOB_HOURS}
