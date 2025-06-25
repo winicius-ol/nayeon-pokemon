@@ -9,10 +9,11 @@ EMOJIS = ['❤️', '💖', '💗', '💓', '💕', '💞', '💘', '😍', '�
 
 bot = commands.Bot(command_prefix='Nayeon ', bot=False)
 
-@tasks.loop(hours=int(CRON_JOB_HOURS))
+@tasks.loop(hours=CRON_JOB_HOURS)
 async def cronjob1():
     print('Cronjob 1 executed')
-    channel = bot.get_channel(int(POKEMON_CHANNEL))
+    channel = bot.get_channel(POKEMON_CHANNEL)
+
     if channel is not None:
         await channel.send('$p')
     else:
