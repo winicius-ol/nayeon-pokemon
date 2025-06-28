@@ -29,7 +29,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    is_expected_user_message = (message.author.id == SPECIFIED_USER_ID and message.content == "$p")
+    is_expected_user_message = (message.author.id == SPECIFIED_USER_ID and message.content.startswith("$p"))
     if is_expected_user_message and random.random() < 0.7:
         await asyncio.sleep(random.uniform(0.5, 1.5))
         await message.add_reaction(random.choice(EMOJIS))
