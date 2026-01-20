@@ -8,6 +8,7 @@ bot = commands.Bot(command_prefix='Nayeon ', bot=False)
 
 @bot.event
 async def on_ready():
+    print("Bot ready, starting the script")
     channel = bot.get_channel(POKEMON_CHANNEL)
 
     if channel is not None:
@@ -15,6 +16,7 @@ async def on_ready():
     else:
         print('Channel not found.')
 
+    print("Done!")
     await bot.close()
 
 
