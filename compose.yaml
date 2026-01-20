@@ -12,7 +12,7 @@ services:
       - POKEMON_CHANNEL=${POKEMON_CHANNEL}
     healthcheck:
       test: ["CMD", "python", "main.py"]
-      start_period: 10s
+      start_period: 60s
       interval: 2h
-      timeout: 10s
+      timeout: 60s
       retries: 3
