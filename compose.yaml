@@ -1,5 +1,6 @@
 services:
   nayeon-pokemon:
+    container_name: nayeon-bot
     image: "nayeon-pokemon"
     build:
       context: .
@@ -9,5 +10,9 @@ services:
     environment:
       - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
       - POKEMON_CHANNEL=${POKEMON_CHANNEL}
-      - CRON_JOB_HOURS=${CRON_JOB_HOURS}
-      - SPECIFIED_USER_ID=${SPECIFIED_USER_ID}
+  healthcheck:
+    test: ["CMD", "python", "main.py"]
+    interval: 2h
+    timeout: 10s
+    retries: 3
+    start_period: 10s
