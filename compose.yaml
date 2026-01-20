@@ -10,9 +10,9 @@ services:
     environment:
       - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
       - POKEMON_CHANNEL=${POKEMON_CHANNEL}
-  healthcheck:
-    test: ["CMD", "python", "main.py"]
-    start_period: 10s
-    interval: 2h
-    timeout: 10s
-    retries: 3
+    healthcheck:
+      test: ["CMD", "python", "main.py"]
+      start_period: 10s
+      interval: 2h
+      timeout: 10s
+      retries: 3
